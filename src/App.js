@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Header from "./components/Header";
 
@@ -14,11 +14,11 @@ function App() {
                 <div className="App">
                     <Header />
                     <div className="wrapper">
-                        <Switch>
-                            <Route path={'/'} exact component={Home} />
-                            <Route path={'/apod'} component={Apod} />
-                            <Route path={'/mars'} component={Mars} />
-                        </Switch>
+                        <Routes>
+                            <Route path={'/'} element={<Home />} />
+                            <Route path={'/apod'} element={<Apod />} />
+                            <Route path={'/mars'} element={<Mars />} />
+                        </Routes>
                     </div>
                 </div>
             </BrowserRouter>
